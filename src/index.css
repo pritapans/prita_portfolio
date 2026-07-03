@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  @apply font-body;
+}
+
+body {
+  @apply bg-paper-50 text-ink-900 transition-colors duration-500;
+}
+
+.dark body {
+  @apply bg-ink-950 text-paper-100;
+}
+
+::selection {
+  background: #5EEAD4;
+  color: #06070A;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3A4150;
+  border-radius: 999px;
+}
+
+.dotgrid {
+  background-image: radial-gradient(circle, rgba(140,148,163,0.35) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.dark .dotgrid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.09) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.dark .glass {
+  background: rgba(16,20,28,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #2DD4BF 0%, #8B7BFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow {
+  box-shadow: 0 0 0 1px rgba(45,212,191,0.15), 0 0 40px -10px rgba(139,123,255,0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
